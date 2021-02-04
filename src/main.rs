@@ -1,9 +1,8 @@
-use cli::{commands::Command, handler::handle_command};
-use structopt::StructOpt;
+use cli::commands::run;
 
 mod cli;
+mod requests;
 
 fn main() {
-    let opt = Command::from_args();
-    handle_command(&opt);
+    run();
 }

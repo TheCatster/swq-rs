@@ -1,18 +1,22 @@
-use structopt::StructOpt;
+use super::handler::handle_commands;
+use clap::{clap_app, crate_authors, crate_description, crate_name, crate_version, ArgMatches};
 
-#[derive(StructOpt, Debug)]
-#[structopt(name = "star wars quotes -")]
-pub enum Command {
-    #[structopt(name = "quote")]
-    Quote {
-        keywords: String,
-        #[structopt(short, long)]
-        verbose: bool,
-    },
-    #[structopt(name = "gif")]
-    Gif {
-        keywords: String,
-        #[structopt(short, long)]
-        verbose: bool,
-    },
+pub fn run() {
+    let matches: ArgMatches = clap_app!((crate_name!()) =>
+        (version: crate_version!())
+        (author: crate_authors!("\n"))
+        (about: crate_description!())
+        (@arg verbose: -v --verbose "Print information verbosely")
+        (@subcommand quote =>
+                (about: "Retrieves Star Wars quotes")
+                (@arg KEYWORDS: +required "Sets the keywords to search quotes for")
+        )
+        (@subcommand gif =>
+                (about: "Retrieves Star Wars GIFs")
+                (@arg KEYWORDS: +required "Sets the keywords to search GIFs for")
+        )
+    )
+    .get_matches();
+
+    handle_commands(matches);
 }
