@@ -6,7 +6,6 @@ pub fn run() {
         (version: crate_version!())
         (author: crate_authors!("\n"))
         (about: crate_description!())
-        (@arg verbose: -v --verbose "Print information verbosely")
         (@subcommand quote =>
                 (about: "Retrieves Star Wars quotes")
                 (@arg KEYWORDS: +required "Sets the keywords to search quotes for")

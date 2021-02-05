@@ -1,4 +1,3 @@
-pub fn get_gif(keywords: String, verbose: bool) {
-    println!("Verbose? {}", verbose);
+pub fn get_gif(keywords: String) {
     println!("Getting GIF about {}", keywords);
 }

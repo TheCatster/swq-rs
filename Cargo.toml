@@ -9,3 +9,5 @@ edition = "2018"
 
 [dependencies]
 clap = "2.33"
+rand = "0.8"
+clipboard-ext = "0.2"

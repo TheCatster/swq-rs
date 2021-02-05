@@ -10,15 +10,9 @@ pub fn handle_commands(matches: ArgMatches) {
         _ => String::from(""),
     };
 
-    let verbose = if matches.is_present("verbose") {
-        true
-    } else {
-        false
-    };
-
     match matches.subcommand() {
-        ("quote", Some(_sub_m)) => get_quote(keywords, verbose),
-        ("gif", Some(_sub_m)) => get_gif(keywords, verbose),
+        ("quote", Some(_sub_m)) => get_quote(keywords),
+        ("gif", Some(_sub_m)) => get_gif(keywords),
         ("add_quote", Some(_sub_m)) => {
             println!("This isn't implemented yet... how did you get here?")
         }
