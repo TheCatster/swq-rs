@@ -16,9 +16,9 @@ Use your terminal often, and really want to grab that perfect quote or GIF for t
 
 ## Usage
 
-- swq quote KEYWORDS
+- `swq quote KEYWORDS`
 
-- swq gif KEYWORDS
+- `swq gif KEYWORDS`
 
 That's it!
 
