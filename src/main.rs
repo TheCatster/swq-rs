@@ -1,7 +1,8 @@
-use cli::commands::run;
+use cli::run;
 
 mod cli;
-mod requests;
+mod gif;
+mod quote;
 
 fn main() {
     run();
