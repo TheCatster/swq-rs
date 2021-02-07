@@ -2,12 +2,12 @@ use crate::requests::{gif::get_gif, quote::get_quote};
 use clap::ArgMatches;
 
 pub fn handle_commands(matches: ArgMatches) {
-    let keywords = match matches.subcommand() {
-        ("quote", Some(sub_m)) => String::from(sub_m.value_of("KEYWORDS").unwrap()),
-        ("gif", Some(sub_m)) => String::from(sub_m.value_of("KEYWORDS").unwrap()),
-        ("add_quote", Some(sub_m)) => String::from(sub_m.value_of("KEYWORDS").unwrap()),
-        ("remove_quote", Some(sub_m)) => String::from(sub_m.value_of("KEYWORDS").unwrap()),
-        _ => String::from(""),
+    let keywords: &str = match matches.subcommand() {
+        ("quote", Some(sub_m)) => sub_m.value_of("KEYWORDS").unwrap(),
+        ("gif", Some(sub_m)) => sub_m.value_of("KEYWORDS").unwrap(),
+        ("add_quote", Some(sub_m)) => sub_m.value_of("KEYWORDS").unwrap(),
+        ("remove_quote", Some(sub_m)) => sub_m.value_of("KEYWORDS").unwrap(),
+        _ => "",
     };
 
     match matches.subcommand() {

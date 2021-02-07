@@ -2,7 +2,7 @@ use clipboard_ext::{prelude::*, x11_fork::ClipboardContext};
 use rand::{seq::SliceRandom, thread_rng};
 pub(crate) const QUOTES: &[&str] = &include!(concat!(env!("OUT_DIR"), "/quotes.rs"));
 
-pub fn get_quote(keywords: String) {
+pub fn get_quote(keywords: &str) {
     let random_quote: &str = QUOTES
         .iter()
         .filter(|x| x.to_lowercase().contains(keywords.to_lowercase().as_str()))
