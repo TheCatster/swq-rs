@@ -15,5 +15,5 @@ pub fn get_quote(keywords: String) {
     let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
     ctx.set_contents(random_quote.to_owned()).unwrap();
 
-    println!("Quote has been added to you clipboard!");
+    println!("Quote has been added to your clipboard!");
 }
