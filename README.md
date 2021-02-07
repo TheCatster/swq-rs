@@ -1,6 +1,6 @@
 <div id="swq-rs-logo" align="center">
     <br />
-    <img src="https://github.com/TheCatster/blob/master/logo.png" alt="SWQ-rs Logo" width="150" height="150"/>
+    <img src="https://github.com/TheCatster/swq-rs/blob/master/logo.png" alt="SWQ-rs Logo" width="150" height="150"/>
     <h1>SWQ-rs</h1>
     <h3>Star Wars Quote And GIF Utility</h3>
 </div>
