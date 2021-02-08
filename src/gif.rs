@@ -1,8 +1,10 @@
-use anyhow::{anyhow, Context, Result};
-use json::{self, parse};
-use keyring;
-use rand::seq::IteratorRandom;
-use std::{env, io::stdin};
+use {
+    anyhow::{anyhow, Context, Result},
+    json::{self, parse},
+    keyring::Keyring,
+    rand::seq::IteratorRandom,
+    std::{env, io::stdin},
+};
 
 const BASE_URL: &str = "https://api.tenor.com/v1/search";
 
@@ -25,7 +27,7 @@ fn request_gif(keywords: &str, api_key: &str) -> Result<String> {
 }
 
 fn json_to_gif(json: &str) -> Result<String> {
-    let parsed = parse(&json).unwrap();
+    let parsed = parse(json).context("Failed to parse API response.")?;
     let mut rng = rand::thread_rng();
 
     parsed["results"]
@@ -38,7 +40,7 @@ fn json_to_gif(json: &str) -> Result<String> {
 fn authenticate_api() -> Result<String> {
     let service = "swq-rs";
     let username = env::var("USER").unwrap_or_else(|_| String::from("swq"));
-    let keyring = keyring::Keyring::new(&service, &username);
+    let keyring = Keyring::new(&service, &username);
     let password = keyring.get_password();
     if password.is_err() {
         let mut input = String::new();

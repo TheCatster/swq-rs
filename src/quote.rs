@@ -1,5 +1,7 @@
-use anyhow::{Context, Result};
-use rand::seq::IteratorRandom;
+use {
+    anyhow::{Context, Result},
+    rand::seq::IteratorRandom,
+};
 
 pub(crate) const QUOTES: &[&str] = &include!(concat!(env!("OUT_DIR"), "/quotes.rs"));
 

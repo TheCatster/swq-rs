@@ -1,4 +1,5 @@
 use anyhow::Result;
+
 use cli::run;
 
 mod cli;

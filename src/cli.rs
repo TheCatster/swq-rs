@@ -1,7 +1,10 @@
+use {
+    anyhow::{anyhow, Result},
+    clap::{clap_app, crate_authors, crate_description, crate_name, crate_version, ArgMatches},
+    clipboard_ext::{prelude::*, x11_fork::ClipboardContext},
+};
+
 use crate::{gif::get_gif, quote::get_quote};
-use anyhow::{anyhow, Result};
-use clap::{clap_app, crate_authors, crate_description, crate_name, crate_version, ArgMatches};
-use clipboard_ext::{prelude::*, x11_fork::ClipboardContext};
 
 pub fn run() -> Result<()> {
     let matches: ArgMatches = clap_app!((crate_name!()) =>
@@ -24,14 +27,23 @@ pub fn run() -> Result<()> {
 
 fn handle_commands(matches: ArgMatches) -> Result<()> {
     let result = match matches.subcommand() {
-        ("quote", Some(sub_m)) => get_quote(sub_m.value_of("KEYWORDS").unwrap()),
-        ("gif", Some(sub_m)) => get_gif(sub_m.value_of("KEYWORDS").unwrap()),
+        ("quote", Some(sub_m)) => get_quote(
+            sub_m
+                .value_of("KEYWORDS")
+                .expect("KEYWORDS will never be None, as it is required by clap."),
+        ),
+        ("gif", Some(sub_m)) => get_gif(
+            sub_m
+                .value_of("KEYWORDS")
+                .expect("KEYWORDS will never be None, as it is required by clap."),
+        ),
         _ => unreachable!(),
     }?;
 
     println!("{}\n", result);
 
-    let mut ctx: ClipboardContext = ClipboardProvider::new().expect("Failed to open clipboard");
+    let mut ctx: ClipboardContext =
+        ClipboardProvider::new().map_err(|_| anyhow!("Failed to open clipboard."))?;
     ctx.set_contents(result)
         .map_err(|_| anyhow!("Failed to set the clipboard contents."))?;
 
