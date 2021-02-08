@@ -5,12 +5,6 @@
     <h3>Star Wars Quote And GIF Utility</h3>
 </div>
 
-<div id="badges" align="center">
-
-  ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TheCatster/swq-rs/Rust) 
-
-</div>
-
 ## About SWQ-rs
 Use your terminal often, and really want to grab that perfect quote or GIF for the situation? SWQ has you covered! It's easy to use, and quickly adds a GIF or full quote (with or without author) to your clipboard. SWQ-rs is a rewrite of the original Python+fire into Rust+clap for a faster, and more efficient codebase.
 
