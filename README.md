@@ -24,6 +24,10 @@ That's it!
 
 ## Installation
 
+- Cargo: `cargo install swq`
+
+- AUR: `paru -S swq`
+
 A Tenor API key is recommended, to get one please go to [Tenor API](https://tenor.com/gifapi), and on first time use of the GIF command, it will prompt you to paste it in (the key is held in the keyring).
 
 ## To-Do:
