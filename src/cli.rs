@@ -37,7 +37,9 @@ fn handle_commands(matches: ArgMatches) -> Result<()> {
                 .value_of("KEYWORDS")
                 .expect("KEYWORDS will never be None, as it is required by clap."),
         ),
-        _ => unreachable!(),
+        _ => Err(anyhow!(
+            "This is not a valid command. Please type the help command for more info."
+        )),
     }?;
 
     println!("{}\n", result);

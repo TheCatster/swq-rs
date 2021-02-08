@@ -1,6 +1,6 @@
 [package]
 name = "swq"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Daniel Rose <danielrose@member.fsf.org>"]
 edition = "2018"
 description = "Fetch and add Star Wars quotes (and GIFs!) from the CLI."
