@@ -2,8 +2,14 @@
 name = "swq"
 version = "0.1.0"
 authors = ["Daniel Rose <danielrose@member.fsf.org>"]
-description = "Fetch and add Star Wars quotes (and GIFs!) from the CLI."
 edition = "2018"
+description = "Fetch and add Star Wars quotes (and GIFs!) from the CLI."
+homepage = "https://github.com/thecatster/swq-rs"
+repository = "https://github.com/thecatster/swq-rs"
+license = ""
+keywords = ["gif", "quote", "sw"]
+categories = ["command-line-utilities"]
+readme="README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
