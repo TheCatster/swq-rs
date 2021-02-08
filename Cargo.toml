@@ -1,6 +1,6 @@
 [package]
 name = "swq"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Daniel Rose <danielrose@member.fsf.org>"]
 edition = "2018"
 description = "Fetch and add Star Wars quotes (and GIFs!) from the CLI."
@@ -11,8 +11,6 @@ keywords = ["gif", "quote", "sw"]
 categories = ["command-line-utilities"]
 readme="README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 clap = "2.33"
 rand = "0.8"
@@ -21,3 +19,8 @@ ureq = "2"
 json = "0.12"
 anyhow = "1"
 keyring = "0.10"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
