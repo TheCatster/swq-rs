@@ -7,7 +7,7 @@ use std::{env, io::stdin};
 const BASE_URL: &str = "https://api.tenor.com/v1/search";
 
 pub fn get_gif(keywords: &str) -> Result<String> {
-    let api_key = authenticate_api().expect("Unable to interpret API key.");
+    let api_key = authenticate_api()?;
     let result = request_gif(keywords, &api_key)?;
     json_to_gif(&result)
 }
