@@ -1,19 +1,8 @@
-<div id="swq-rs-logo" align="center">
-    <br />
-    <img src="https://github.com/TheCatster/swq-rs/blob/master/logo.png" alt="SWQ-rs Logo" width="150" height="150"/>
-    <h1>SWQ-rs</h1>
-    <h3>Star Wars Quote And GIF Utility</h3>
-</div>
+# swq-rs
+Star Wars Quote and GIF Utility
 
-<div id="badges" align="center">
-
-  [![Rust](https://github.com/TheCatster/swq-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/TheCatster/swq-rs/actions/workflows/rust.yml)
-
-</div>
-
-## About SWQ-rs 
-[![Rust](https://github.com/TheCatster/swq-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/TheCatster/swq-rs/actions/workflows/rust.yml)
-Use your terminal often, and really want to grab that perfect quote or GIF for the situation? SWQ has you covered! It's easy to use, and quickly adds a GIF or full quote (with or without author) to your clipboard. SWQ-rs is a rewrite of the original Python+fire into Rust+clap for a faster, and more efficient codebase.
+## About swq-rs
+Use your terminal often, and really want to grab that perfect quote or GIF for the situation? SWQ has you covered! It's easy to use, and quickly adds a GIF or full quote (with or without author) to your clipboard. swq-rs is a rewrite of the original Python+fire into Rust+clap for a faster, and more efficient codebase.
 
 ## Usage
 
@@ -57,7 +46,7 @@ Simply run `cargo build --release` to get your release binary.
 
 ### Support:
 
-The best way to support SWQ-rs is to contribute! Feel free to make PRs, open issues, and help us make this the best utility we can! If you're interested in adding a feature, simply open an issue.
+The best way to support swq-rs is to contribute! Feel free to make PRs, open issues, and help us make this the best utility we can! If you're interested in adding a feature, simply open an issue.
 
 ### License:
 
