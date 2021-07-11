@@ -1,0 +1,26 @@
+[package]
+name = "swq"
+version = "0.1.3"
+authors = ["Daniel Rose <danielrose@member.fsf.org>"]
+edition = "2018"
+description = "Fetch and add Star Wars quotes (and GIFs!) from the CLI."
+homepage = "https://github.com/thecatster/swq-rs"
+repository = "https://github.com/thecatster/swq-rs"
+license = "GPL-3.0"
+keywords = ["gif", "quote", "sw"]
+categories = ["command-line-utilities"]
+readme="README.md"
+
+[dependencies]
+clap = "2.33"
+rand = "0.8"
+clipboard-ext = "0.2"
+ureq = "2"
+json = "0.12"
+anyhow = "1"
+keyring = "0.10"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
